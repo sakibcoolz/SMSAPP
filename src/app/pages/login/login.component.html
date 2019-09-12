@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="col-lg-7">
+      <div class="card">
+          <h5 class="card-header">Login</h5>
+          <div class="card-body">
+            <form [formGroup]="regularForms" (ngSubmit)="onsubmit(regularForms.value)" role="form">
+            <div class="col-xs-5">
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput type="text" placeholder="Username" formControlName="username" autocomplete="username" required>
+                      </mat-form-field>
+                </div>
+            </div>
+            <div class="col-xs-5">
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput type="password" placeholder="Password" formControlName="password" autocomplete="password" required>
+                      </mat-form-field>
+                  </div>
+                  <span>{{msg}}</span>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" [disabled]="!regularForms.valid">Submit</button>
+            </form>
+          </div>
+        </div>
+  </div>
+</div>

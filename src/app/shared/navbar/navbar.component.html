@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #0c0b6d;">
+    <a class="navbar-brand" [routerLink]="['/dashboard']" routerLinkActive="router-link-active" >SMSAPP</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation"></button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        </ul>
+            <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-name-shape-o-direction"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownId">
+                                <a class="dropdown-item" href="#">Action 1</a>
+                                <a class="dropdown-item" href="#" (click)="logout()">Logout</a>
+                            </div>
+                        </li>
+            </ul>
+    </div>
+</nav>
+<mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <button mat-button [matMenuTriggerFor]="animals">Menu</button>
+          <span class="example-spacer"></span>
+          <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
+          <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon>
+        
+          <mat-menu #animals="matMenu">
+            <button mat-menu-item [matMenuTriggerFor]="setting">Settings</button>
+            <button mat-menu-item [matMenuTriggerFor]="smsdata">SMS Data</button>
+          </mat-menu>
+          
+          <mat-menu #setting="matMenu">
+            <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
+            <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
+            <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
+            <button mat-menu-item [routerLink]="['/add-user']" routerLinkActive="router-link-active" >Add User</button>
+            <button mat-menu-item>Mammals</button>
+          </mat-menu>
+
+            <mat-menu #smsdata="matMenu">
+                <button mat-menu-item [matMenuTriggerFor]="sms">SMS</button>
+                <button mat-menu-item [matMenuTriggerFor]="smshistory">SMS History</button>
+            </mat-menu>
+          
+          <mat-menu #sms="matMenu">
+            <button mat-menu-item>Quick SMS</button>
+            <button mat-menu-item>Quick Group SMS</button>
+            <button mat-menu-item>Schedule SMS</button>
+            <button mat-menu-item>Schedule Group SMS</button>
+            <button mat-menu-item>Broadcast</button>
+          </mat-menu>
+
+          <mat-menu #smshistory="matMenu">
+                <button mat-menu-item>Quick SMS History</button>
+                <button mat-menu-item>Quick Group SMS History</button>
+                <button mat-menu-item>Schedule SMS History</button>
+                <button mat-menu-item>Schedule Group SMS History</button>
+                <button mat-menu-item>Broadcast History</button>
+              </mat-menu>
+          
+          <mat-menu #fish="matMenu">
+            <button mat-menu-item>Baikal oilfish</button>
+            <button mat-menu-item>Bala shark</button>
+            <button mat-menu-item>Ballan wrasse</button>
+            <button mat-menu-item>Bamboo shark</button>
+            <button mat-menu-item>Banded killifish</button>
+          </mat-menu>
+          
+          <mat-menu #amphibians="matMenu">
+            <button mat-menu-item>Sonoran desert toad</button>
+            <button mat-menu-item>Western toad</button>
+            <button mat-menu-item>Arroyo toad</button>
+            <button mat-menu-item>Yosemite toad</button>
+          </mat-menu>
+          
+          <mat-menu #reptiles="matMenu">
+            <button mat-menu-item>Banded Day Gecko</button>
+            <button mat-menu-item>Banded Gila Monster</button>
+            <button mat-menu-item>Black Tree Monitor</button>
+            <button mat-menu-item>Blue Spiny Lizard</button>
+            <button mat-menu-item disabled>Velociraptor</button>
+          </mat-menu>
+          
+        </mat-toolbar-row>
+      </mat-toolbar>
